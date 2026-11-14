@@ -1,0 +1,30 @@
+{
+  "name": "tnu-tech-community",
+  "version": "1.0.0",
+  "description": "TNU Tech Community - A technology community at Tanta University",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "npm run build:analytics",
+    "build:analytics": "esbuild assets/js/analytics-init.js --bundle --outfile=assets/js/analytics.js --format=iife --minify",
+    "lint": "echo 'No linter configured'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midofayad22/tnu-tech-community"
+  },
+  "keywords": [
+    "tnu",
+    "tech",
+    "community",
+    "tanta",
+    "university"
+  ],
+  "author": "TNU Tech Community",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
