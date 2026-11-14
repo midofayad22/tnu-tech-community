@@ -22,6 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
       navTeams: "Teams",
       navJourney: "Learning Journey",
       navAbout: "About",
+      navDiscover: "Discover your passion",
+
+      // Discover section
+      passionHero: "Discover your passion",
+      passionKicker: "YOUR JOURNEY STARTS WITH YOU",
+      passionTitle: "Not sure where <span>to start?</span>",
+      passionDescription:
+        "You do not need to know your specialization from the beginning. Answer a few questions to discover the technology fields that best match your interests and way of thinking.",
+      passionAction: "Start discovering your passion",
+      passionNote: "Interactive assessment · Personalized results · No sign-up",
+
       explore: "Explore teams",
       heroEyebrow: "TECH COMMUNITY · FACULTY OF ENGINEERING · TANTA UNIVERSITY",
       heroTitle: 'From curiosity to <span class="gradient-text">impact.</span><br>Build your future here.',
@@ -104,6 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
       navTeams: "الفرق التقنية",
       navJourney: "رحلة التعلّم",
       navAbout: "عن المجتمع",
+      navDiscover: "اكتشف شغفك",
+
+      // Discover section
+      passionHero: "اكتشف شغفك",
+      passionKicker: "رحلتك تبدأ من نفسك",
+      passionTitle: "لسه مش عارف <span>تبدأ منين؟</span>",
+      passionDescription:
+        "مش لازم تكون عارف تخصصك من البداية. جاوب عن مجموعة من الأسئلة واكتشف المجالات التقنية الأقرب لاهتماماتك وطريقة تفكيرك.",
+      passionAction: "ابدأ اكتشاف شغفك",
+      passionNote: "اختبار تفاعلي · نتائج مخصصة · بدون تسجيل",
+
       explore: "استكشف الفرق",
       heroEyebrow: "مجتمع التكنولوجيا · كلية الهندسة · جامعة طنطا",
       heroTitle: 'من الشغف إلى <span class="gradient-text">التأثير.</span><br>ابنِ مستقبلك التقني هنا.',

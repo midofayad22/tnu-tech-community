@@ -3,28 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#080F24" />
-    <meta name="application-name" content="TNU Tech Community" />
-
+    <meta name="theme-color" content="#101827" />
     <meta
       name="description"
       content="TNU Tech Community — مجتمع طلابي تقني بكلية الهندسة، جامعة طنطا. تعلّم، طبّق، وابنِ مشاريع حقيقية مع فرق متخصصة." />
-
-    <meta property="og:title" content="TNU Tech Community" />
-    <meta property="og:description" content="Learn. Build. Innovate. — A technology community at Tanta University." />
-    <meta property="og:type" content="website" />
-
     <title>TNU Tech Community | Learn. Build. Innovate.</title>
-
-    <!-- Unified TNU Tech Community Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='10' y1='10' x2='54' y2='54'%3E%3Cstop offset='0%25' stop-color='%2336C6B2'/%3E%3Cstop offset='100%25' stop-color='%238B7CFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M13 13H51Q54 13 54 16V21Q54 24 51 24H36V49Q36 53 32 53H29Q25 53 25 49V24H13Q10 24 10 21V16Q10 13 13 13Z' fill='none' stroke='url(%23g)' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M17 18H47' stroke='%2336C6B2' stroke-width='2' stroke-linecap='round' opacity='.8'/%3E%3Ccircle cx='47' cy='18' r='3' fill='%238B7CFF'/%3E%3C/svg%3E" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet" />
@@ -33,7 +19,6 @@
 
     <script src="assets/js/data.js" defer></script>
     <script src="assets/js/app.js" defer></script>
-    <script src="assets/js/navigation.js" defer></script>
   </head>
 
   <body>
@@ -78,7 +63,6 @@
               <circle cx="47" cy="18" r="3" fill="#8B7CFF" />
             </svg>
           </span>
-
           <span class="brand-copy">
             <strong>TECH COMMUNITY</strong>
             <small>Faculty of Engineering · Tanta University</small>
@@ -90,6 +74,16 @@
           <a href="#teams" class="nav-link" data-i18n="navTeams">الفرق التقنية</a>
           <a href="#journey" class="nav-link" data-i18n="navJourney">رحلة التعلّم</a>
           <a href="#about" class="nav-link" data-i18n="navAbout">عن المجتمع</a>
+
+          <!-- DISCOVER YOUR PASSION -->
+          <a
+            href="discover.html"
+            class="nav-link passion-nav-link"
+            data-i18n="navDiscover"
+            aria-label="Discover your passion">
+            <span aria-hidden="true">✦</span>
+            اكتشف شغفك
+          </a>
         </nav>
 
         <div class="header-actions">
@@ -136,6 +130,13 @@
             <a href="#teams" class="button button-primary" data-i18n="discoverTeams"> اكتشف الفرق <span>↗</span> </a>
 
             <a href="#about" class="button button-quiet" data-i18n="learnMore"> اعرف عن المجتمع <span>←</span> </a>
+
+            <!-- PASSION DISCOVERY CTA -->
+            <a href="discover.html" class="button passion-hero-button" data-i18n="passionHero">
+              <span class="passion-button-icon" aria-hidden="true">✦</span>
+              اكتشف شغفك
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
 
           <div class="hero-note">
@@ -156,42 +157,7 @@
           <div class="visual-ring ring-b"></div>
 
           <div class="visual-center">
-            <span class="center-symbol" aria-hidden="true">
-              <svg viewBox="0 0 64 64" width="76" height="76" xmlns="http://www.w3.org/2000/svg" focusable="false">
-                <defs>
-                  <linearGradient id="tnu-hero-gradient" x1="10" y1="10" x2="54" y2="54">
-                    <stop offset="0%" stop-color="#36C6B2" />
-                    <stop offset="100%" stop-color="#8B7CFF" />
-                  </linearGradient>
-                </defs>
-
-                <path
-                  d="M13 13
-                     H51
-                     Q54 13 54 16
-                     V21
-                     Q54 24 51 24
-                     H36
-                     V49
-                     Q36 53 32 53
-                     H29
-                     Q25 53 25 49
-                     V24
-                     H13
-                     Q10 24 10 21
-                     V16
-                     Q10 13 13 13Z"
-                  fill="none"
-                  stroke="url(#tnu-hero-gradient)"
-                  stroke-width="3"
-                  stroke-linejoin="round" />
-
-                <path d="M17 18H47" stroke="#36C6B2" stroke-width="2" stroke-linecap="round" opacity=".8" />
-
-                <circle cx="47" cy="18" r="3" fill="#8B7CFF" />
-              </svg>
-            </span>
-
+            <span class="center-symbol">T</span>
             <strong>TNU</strong>
             <small>TECH COMMUNITY</small>
           </div>
@@ -252,6 +218,48 @@
         </div>
 
         <div class="stat-caption" data-i18n="statCaption">Learn together. Build together. Grow together.</div>
+      </section>
+
+      <!-- DISCOVER YOUR PASSION -->
+      <section class="passion-promo section-shell" id="discover">
+        <div class="passion-promo-inner">
+          <div class="passion-promo-content">
+            <span class="passion-promo-kicker">
+              <span aria-hidden="true">✦</span>
+              <span data-i18n="passionKicker">YOUR JOURNEY STARTS WITH YOU</span>
+            </span>
+
+            <h2 class="passion-promo-title" data-i18n="passionTitle">لسه مش عارف <span>تبدأ منين؟</span></h2>
+
+            <p class="passion-promo-description" data-i18n="passionDescription">
+              مش لازم تكون عارف تخصصك من البداية. جاوب عن مجموعة من الأسئلة واكتشف المجالات التقنية الأقرب لاهتماماتك
+              وطريقة تفكيرك.
+            </p>
+
+            <a href="discover.html" class="passion-promo-action">
+              <span data-i18n="passionAction">ابدأ اكتشاف شغفك</span>
+              <span class="passion-promo-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <span class="passion-promo-note" data-i18n="passionNote"> اختبار تفاعلي · نتائج مخصصة · بدون تسجيل </span>
+          </div>
+
+          <div class="passion-promo-visual" aria-hidden="true">
+            <div class="passion-orbit passion-orbit-one"></div>
+            <div class="passion-orbit passion-orbit-two"></div>
+
+            <div class="passion-center">
+              <span>✦</span>
+              <strong>YOUR</strong>
+              <small>PASSION</small>
+            </div>
+
+            <span class="passion-floating passion-floating-one">AI</span>
+            <span class="passion-floating passion-floating-two">WEB</span>
+            <span class="passion-floating passion-floating-three">SEC</span>
+            <span class="passion-floating passion-floating-four">DATA</span>
+          </div>
+        </div>
       </section>
 
       <!-- TEAMS -->
@@ -319,45 +327,37 @@
           <div class="journey-steps">
             <article class="journey-step">
               <span class="step-number">01</span>
-
               <div>
                 <h3 data-i18n="stepOneTitle">افهم الأساسيات</h3>
                 <p data-i18n="stepOneText">ابنِ قاعدة قوية في المفاهيم والأدوات الضرورية لمجالك.</p>
               </div>
-
               <span class="step-symbol">◌</span>
             </article>
 
             <article class="journey-step">
               <span class="step-number">02</span>
-
               <div>
                 <h3 data-i18n="stepTwoTitle">طبّق بنفسك</h3>
                 <p data-i18n="stepTwoText">حوّل كل مفهوم إلى تجربة صغيرة ومهمة عملية.</p>
               </div>
-
               <span class="step-symbol">⌁</span>
             </article>
 
             <article class="journey-step">
               <span class="step-number">03</span>
-
               <div>
                 <h3 data-i18n="stepThreeTitle">ابنِ مشاريع</h3>
                 <p data-i18n="stepThreeText">اشتغل مع فريقك على حلول حقيقية قابلة للعرض والتطوير.</p>
               </div>
-
               <span class="step-symbol">◇</span>
             </article>
 
             <article class="journey-step">
               <span class="step-number">04</span>
-
               <div>
                 <h3 data-i18n="stepFourTitle">شارك وتطوّر</h3>
                 <p data-i18n="stepFourText">اعرض شغلك، شارك في المسابقات، وتعلّم من المجتمع.</p>
               </div>
-
               <span class="step-symbol">↗</span>
             </article>
           </div>
@@ -368,8 +368,7 @@
       <section class="collaboration-section section-shell">
         <div class="collab-art">
           <div class="collab-core">
-            TNU
-            <br />
+            TNU<br />
             <small>LAB</small>
           </div>
 
@@ -426,11 +425,11 @@
       <!-- FOOTER -->
       <footer class="site-footer">
         <div class="section-shell footer-inner">
-          <a class="brand footer-brand" href="#home" aria-label="TNU Tech Community Home">
+          <a class="brand footer-brand" href="#home">
             <span class="brand-mark" aria-hidden="true">
               <svg viewBox="0 0 64 64" width="48" height="48" xmlns="http://www.w3.org/2000/svg" focusable="false">
                 <defs>
-                  <linearGradient id="tnu-footer-gradient" x1="10" y1="10" x2="54" y2="54">
+                  <linearGradient id="tnu-header-gradient" x1="10" y1="10" x2="54" y2="54">
                     <stop offset="0%" stop-color="#36C6B2" />
                     <stop offset="100%" stop-color="#8B7CFF" />
                   </linearGradient>
@@ -438,22 +437,22 @@
 
                 <path
                   d="M13 13
-                     H51
-                     Q54 13 54 16
-                     V21
-                     Q54 24 51 24
-                     H36
-                     V49
-                     Q36 53 32 53
-                     H29
-                     Q25 53 25 49
-                     V24
-                     H13
-                     Q10 24 10 21
-                     V16
-                     Q10 13 13 13Z"
+                   H51
+                   Q54 13 54 16
+                   V21
+                   Q54 24 51 24
+                   H36
+                   V49
+                   Q36 53 32 53
+                   H29
+                   Q25 53 25 49
+                   V24
+                   H13
+                   Q10 24 10 21
+                   V16
+                   Q10 13 13 13Z"
                   fill="none"
-                  stroke="url(#tnu-footer-gradient)"
+                  stroke="url(#tnu-header-gradient)"
                   stroke-width="3"
                   stroke-linejoin="round" />
 
@@ -462,7 +461,6 @@
                 <circle cx="47" cy="18" r="3" fill="#8B7CFF" />
               </svg>
             </span>
-
             <span class="brand-copy">
               <strong>TECH COMMUNITY</strong>
               <small>Tanta University</small>
@@ -473,7 +471,8 @@
         </div>
 
         <div class="section-shell footer-bottom">
-          <span>© <span id="currentYear"></span> TNU Tech Community</span>
+          <span> © <span id="currentYear"></span> TNU Tech Community </span>
+
           <span data-i18n="footerMade"> Made for curious minds at Tanta University. </span>
         </div>
       </footer>
