@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navJourney: "Learning Journey",
       navAbout: "About",
       navDiscover: "Discover your passion",
-
-      // Discover section
       passionHero: "Discover your passion",
       passionKicker: "YOUR JOURNEY STARTS WITH YOU",
       passionTitle: "Not sure where <span>to start?</span>",
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "You do not need to know your specialization from the beginning. Answer a few questions to discover the technology fields that best match your interests and way of thinking.",
       passionAction: "Start discovering your passion",
       passionNote: "Interactive assessment · Personalized results · No sign-up",
-
       explore: "Explore teams",
       heroEyebrow: "TECH COMMUNITY · FACULTY OF ENGINEERING · TANTA UNIVERSITY",
       heroTitle: 'From curiosity to <span class="gradient-text">impact.</span><br>Build your future here.',
@@ -116,8 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navJourney: "رحلة التعلّم",
       navAbout: "عن المجتمع",
       navDiscover: "اكتشف شغفك",
-
-      // Discover section
       passionHero: "اكتشف شغفك",
       passionKicker: "رحلتك تبدأ من نفسك",
       passionTitle: "لسه مش عارف <span>تبدأ منين؟</span>",
@@ -125,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "مش لازم تكون عارف تخصصك من البداية. جاوب عن مجموعة من الأسئلة واكتشف المجالات التقنية الأقرب لاهتماماتك وطريقة تفكيرك.",
       passionAction: "ابدأ اكتشاف شغفك",
       passionNote: "اختبار تفاعلي · نتائج مخصصة · بدون تسجيل",
-
       explore: "استكشف الفرق",
       heroEyebrow: "مجتمع التكنولوجيا · كلية الهندسة · جامعة طنطا",
       heroTitle: 'من الشغف إلى <span class="gradient-text">التأثير.</span><br>ابنِ مستقبلك التقني هنا.',
@@ -225,7 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const id = String(team.id || "").toLowerCase();
     const name = String(team.name || "").toLowerCase();
-    const arabic = String(team.arabic || "").toLowerCase();
 
     const aliases = {
       ai: ["ai", "artificial-intelligence", "artificial intelligence"],
@@ -267,6 +260,11 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  // Navigate to the independent team page.
+  function getTeamPageURL(teamId) {
+    return `team.html?team=${encodeURIComponent(teamId)}`;
+  }
+
   function renderTeams(query = "") {
     const normalized = query.trim().toLowerCase();
 
@@ -290,73 +288,95 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = filtered
       .map((team, index) => {
         const media = getTeamMedia(team);
+        const teamURL = getTeamPageURL(team.id);
 
         return `
-          <article
-            class="team-card"
-            style="--team-color:${team.color};--team-soft:${team.soft};--card-index:${index}"
-          >
-            ${
-              media.image
-                ? `
-                  <div class="team-card-image">
-                    <img
-                      src="${escapeHTML(media.image)}"
-                      alt="${escapeHTML(team.name)}"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="team-image-overlay"></span>
-                  </div>
-                `
-                : ""
-            }
+        <article
+          class="team-card"
+          style="--team-color:${team.color};--team-soft:${team.soft};--card-index:${index}"
+          data-team-url="${teamURL}"
+          tabindex="0"
+          role="link"
+          aria-label="${t("details")}: ${escapeHTML(team.name)}"
+        >
+          ${
+            media.image
+              ? `
+                <div class="team-card-image">
+                  <img
+                    src="${escapeHTML(media.image)}"
+                    alt="${escapeHTML(team.name)}"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span class="team-image-overlay"></span>
+                </div>
+              `
+              : ""
+          }
 
-            <div class="card-topline">
-              <span class="team-number">${team.number} / 06</span>
-              <span class="team-category">
-                ${team.category === "software" ? t("categorySoftware") : t("categoryEngineering")}
-              </span>
-            </div>
+          <div class="card-topline">
+            <span class="team-number">${team.number} / 06</span>
+            <span class="team-category">
+              ${team.category === "software" ? t("categorySoftware") : t("categoryEngineering")}
+            </span>
+          </div>
 
-            <div class="team-icon">${team.icon}</div>
+          <div class="team-icon">${team.icon}</div>
 
-            <div class="team-card-copy">
-              <span class="team-arabic">${escapeHTML(team.arabic)}</span>
-              <h3>${escapeHTML(team.name)}</h3>
-              <p>${escapeHTML(team.tagline)}</p>
-            </div>
+          <div class="team-card-copy">
+            <span class="team-arabic">${escapeHTML(team.arabic)}</span>
+            <h3>${escapeHTML(team.name)}</h3>
+            <p>${escapeHTML(team.tagline)}</p>
+          </div>
 
-            <div class="team-card-bottom">
-              <span>
-                ${team.specializations.length}
-                ${isEnglish() ? "specializations" : "تخصصات"}
-              </span>
+          <div class="team-card-bottom">
+            <span>
+              ${team.specializations.length}
+              ${isEnglish() ? "specializations" : "تخصصات"}
+            </span>
 
-              <button
-                class="card-link"
-                type="button"
-                data-open-team="${escapeHTML(team.id)}"
-                aria-label="${t("details")}: ${escapeHTML(team.name)}"
-              >
-                ${t("learnMoreCard")} <span>↗</span>
-              </button>
-            </div>
+            <a
+              class="card-link"
+              href="${teamURL}"
+              aria-label="${t("details")}: ${escapeHTML(team.name)}"
+            >
+              ${t("learnMoreCard")} <span>↗</span>
+            </a>
+          </div>
 
-            <div class="team-card-actions">
-              ${renderWhatsAppButton(team, media, "whatsapp-join-card")}
-            </div>
+          <div class="team-card-actions">
+            ${renderWhatsAppButton(team, media, "whatsapp-join-card")}
+          </div>
 
-            <span class="card-watermark">${escapeHTML(team.short)}</span>
-          </article>
-        `;
+          <span class="card-watermark">${escapeHTML(team.short)}</span>
+        </article>
+      `;
       })
       .join("");
 
     noResults.hidden = filtered.length !== 0;
 
-    $$("[data-open-team]", grid).forEach((button) => {
-      button.addEventListener("click", () => openTeam(button.dataset.openTeam));
+    // Make the entire team card clickable.
+    $$(".team-card[data-team-url]", grid).forEach((card) => {
+      card.addEventListener("click", (event) => {
+        // Preserve independent links and interactive elements.
+        if (event.target.closest("a, button, input, select, textarea")) {
+          return;
+        }
+
+        window.location.href = card.dataset.teamUrl;
+      });
+
+      // Keyboard accessibility.
+      card.addEventListener("keydown", (event) => {
+        if (event.target !== card) return;
+
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          window.location.href = card.dataset.teamUrl;
+        }
+      });
     });
   }
 
@@ -721,15 +741,17 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(currentLanguage === "ar" ? "en" : "ar");
   });
 
-  // Detail overlay
-  detailClose.addEventListener("click", closeTeam);
+  // Legacy detail overlay handlers (kept to preserve existing markup).
+  if (detailClose && overlay) {
+    detailClose.addEventListener("click", closeTeam);
 
-  overlay.addEventListener("click", (event) => {
-    if (event.target === overlay) closeTeam();
-  });
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) closeTeam();
+    });
+  }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+    if (event.key === "Escape" && overlay?.classList.contains("is-open")) {
       closeTeam();
     }
 
@@ -764,7 +786,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateScrollUI() {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-
     const percentage = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
 
     progress.style.width = `${percentage}%`;
