@@ -1,0 +1,22 @@
+
+{
+  "name": "TNU Tech Community",
+  "short_name": "TNU Tech",
+  "description": "Student Technology Community at Tanta University",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101827",
+  "theme_color": "#101827",
+  "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
